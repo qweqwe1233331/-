@@ -1,0 +1,72 @@
+class Program
+{
+static void Main()
+{
+Console.WriteLine("Консольный инженерный калькулятор");
+Console.WriteLine("-------------------------------");
+
+
+while (true)
+{
+Console.Write("Введите первое число: ");
+double num1 = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Введите второе число: ");
+double num2 = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Выберите операцию:");
+Console.WriteLine("1. Сложение");
+Console.WriteLine("2. Вычитание");
+Console.WriteLine("3. Умножение");
+Console.WriteLine("4. Деление");
+Console.WriteLine("5. Возведение в степень");
+Console.WriteLine("6. Извлечение квадратного корня");
+
+int choice = Convert.ToInt32(Console.ReadLine());
+
+switch (choice)
+{
+case 1:
+Console.WriteLine($"Результат: {num1 + num2}");
+break;
+case 2:
+Console.WriteLine($зультат: {num1 - num2}");
+break;
+case 3:
+Console.WriteLine($"Результат: {num1 * num2}");
+break;
+case 4:
+if (num2 != 0) {
+Console.WriteLine($"Результат: {num1 / num2}");
+}
+else
+{
+Console.WriteLine("Деление на ноль невозможно");
+}
+break;
+case 5:
+Console.WriteLine($"Результат: {Math.Pow(num1, num2)}");
+break;
+case 6:
+if (num1 >= 0)
+{
+Console.WriteLine($"Результат: {Math.Sqrt(num1)}");
+}
+else
+{
+Console.WriteLine("Нельзя извлекать квадратный корень из отрицательного числа");
+}
+break;
+default:
+Console.WriteLine("Неверный выбор операции");
+break;
+}
+
+Console.WriteLine("Для выхода нажмите Escape, для продолжения нажмите любую клавишу");
+if (Console.ReadKey(true).Key == ConsoleKey.Escape)
+{
+break;
+}
+}
+}
+}
